@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: root
+    columns:
+      - name: num
+        tests:
+          - accepted_values:
+              values: ['2', '3']
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: requests
+        columns:
+          - name: users_id
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['2', '3']
+          - name: id
+            tests:
+              - unique
+              - not_null
+              - accepted_values:
+                  values: ['2', '3']
+          - name: requests_date
+            tests:
+              - unique
+          - name: request_uri
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['2', '3']

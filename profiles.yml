@@ -1,0 +1,25 @@
+
+# For more information on how to configure this file, please see:
+# https://docs.getdbt.com/docs/profile
+
+default:
+  outputs:
+    dev:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: root
+      pass: password
+      dbname: dbt
+      schema: modeled_dev
+    prod:
+      type: postgres
+      threads: 2
+      host: localhost
+      port: 5432
+      user: root
+      pass: password
+      dbname: dbt
+      schema: modeled_prod
+  target: dev
