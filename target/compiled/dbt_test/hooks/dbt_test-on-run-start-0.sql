@@ -1,1 +1,0 @@
-create table if not exists modeled_dev.audit (model text, hook text)
