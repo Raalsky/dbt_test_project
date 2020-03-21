@@ -21,3 +21,10 @@ target-path: "target"  # directory which will store compiled SQL files
 clean-targets:         # directories to be removed by `dbt clean`
     - "target"
     - "dbt_modules"
+
+on-run-start:
+    - "create table if not exists {{ target.schema }}.audit (model text)"
+
+models:
+    dbt_test:
+        pre-hook: "insert into {{ target.schema }}.audit values ('{{ this }}')"

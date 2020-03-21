@@ -9,4 +9,4 @@ with actions as (
   where
     request_uri like '/account/settings%'
 )
-select * from actions /failure
+select * from actions
