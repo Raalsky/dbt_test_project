@@ -13,5 +13,5 @@ with actions as (
   where
     request_uri like '/account/settings%'
 )
-select * from actions
+select * from actions /failed
   );

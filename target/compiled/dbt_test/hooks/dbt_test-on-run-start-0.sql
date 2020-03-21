@@ -1,1 +1,1 @@
-create table if not exists modeled_dev.audit (model text)
+create table if not exists modeled_dev.audit (model text, hook text)

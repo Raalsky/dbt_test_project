@@ -9,4 +9,4 @@ with actions as (
   where
     request_uri like '/account/notifications%'
 )
-select * from actions
+select * from actions /failed

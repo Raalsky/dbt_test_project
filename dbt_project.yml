@@ -23,8 +23,9 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "dbt_modules"
 
 on-run-start:
-    - "create table if not exists {{ target.schema }}.audit (model text)"
+    - "create table if not exists {{ target.schema }}.audit (model text, hook text)"
 
 models:
     dbt_test:
-        pre-hook: "insert into {{ target.schema }}.audit values ('{{ this }}')"
+        pre-hook: "insert into {{ target.schema }}.audit values ('{{ this }}', 'pre')"
+        post-hook: "insert into {{ target.schema }}.audit values ('{{ this }}', 'post')"
