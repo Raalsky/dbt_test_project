@@ -1,13 +1,5 @@
 version: 2
 
-models:
-  - name: root
-    columns:
-      - name: num
-        tests:
-          - accepted_values:
-              values: ['2', '3']
-
 sources:
   - name: raw
     schema: raw
