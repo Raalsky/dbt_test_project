@@ -1,6 +1,6 @@
 {{
   config(
-    tags = ['abc', 'def']
+    tags = ['def']
   )
 }}
 select 1
