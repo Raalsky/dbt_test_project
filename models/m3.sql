@@ -1,0 +1,1 @@
+select one, two from {{ ref("m1") }}
